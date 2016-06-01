@@ -23,8 +23,26 @@
 		\item In eindimensionalen Klimamodellen wird üblicherweise die geographische Breite berücksichtigt. Dadurch können Wärmeflüsse zwischen Äquatorial- und Polarregionen simuliert werden.
 		\item In höherdimensionalen Modellen können beispielsweise Atmosphärenschichten simuliert werden. Allerdings können solche Modelle normalerweise nicht mehr analytisch behandelt werden.
 	\end{itemize}
+	Im folgenden beschränken wir uns auf zwei nulldimensionale Klimamodelle.
 	
 \chapter{Modelle}
+Die beiden hier behandelten Modelle verwenden viele gemeinsame Parameter.\\
+
+\begin{itemize}
+	\item $T$ ist die Temperatur in Kelvin
+	\item $\epsilon$ ist die Bewölkungskonstante. Sie gibt die Abweichung vom einem schwarzen Körper mit $\epsilon=1$ an. Bei Fraedrich ist $\epsilon = 0.69$
+	\item $Q = 430 \frac{W}{m^2}$ ist die auf der Erde eintreffende Strahlung.
+	\item $\sigma = 5.67*10^{-8} \frac{W}{m^2K^4}$ ist die Stefan-Boltzmann-Konstante.
+	\item $h = 75m$ ist die Tiefe des Klimasystems, bis zu der Strahlunsenergieumsätze stattfinden.
+	\item $\rho = 10^3 \frac{kg}{m3}$ ist die Dichte der Atmosphäre.
+%	\item c_w
+ 
+\end{itemize}
+
+
+
+
+
 \section{Griffel und Drazin}
 	\begin{align}
 		\dfrac{dT}{dt} = (0.5 \tanh\left(\frac{T^6}{T_0^6}\right)-1) \sigma T^4 + \mu Q (0.58 + 0.2 \tanh (0.052 (T - 276.15)))

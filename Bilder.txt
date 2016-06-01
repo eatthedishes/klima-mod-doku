@@ -1,0 +1,9 @@
+http://biomath.pythonanywhere.com/run/fraedrich/288
+http://biomath.pythonanywhere.com/run/griffeldrazin/288
+
+
+
+http://biomath.pythonanywhere.com/stabanalysis/fraedrich
+http://biomath.pythonanywhere.com/stabanalysis/griffeldrazin
+
+http://biomath.pythonanywhere.com/comparison

@@ -1,5 +1,6 @@
 \documentclass[]{report}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 
 
 % Title Page
@@ -13,10 +14,35 @@
 %\begin{abstract}
 %\end{abstract}
 \chapter{Einleitung} 
-	Klima ist das Verhalten des Wetters unserer Atmosphäre über längerer Zeiträume. Hiermit sind Zeiträume in der Länge von Jahrzehnten gemeint, im Gegensatz zur kurzfristigen Wettervorhersage, die sich in der Größenordnung von Tagen oder Stunden bewegt. Klima wird im Allgemeinen über statistische Variablen (zum Beispiel Mittelwerte oder Varianzen) ausgedrückt. So beschriebene Variablen werden Klimaelemente genannt; dies sind unter anderem Temperatur, Niederschlag, Luftfeuchtigkeit, atmosphärischer Druck, Wind, Albedo, Bewölkung sowie Ein- und Ausstrahlung.\\
-	Die Größe des System und mit ihr die Vielzahl der Einflussfaktoren und Variablen, die das Klimasystem der Erde beeinflussen und in ihm miteinander interagieren, machen eine erschöpfende Beschreiben desselben und damit eine exakte Vorhersage zukünftiger Entwicklungen unmöglich. Um dennoch verwendbare Beschreibungen des Klimas und realistische Vorhersagen seiner Veränderungen treffen zu können, müssen starke Vereinfachungen vorgenommen werden.\\
-	Die Genauigkeit kurzfristiger Wettervorhersagen ist leicht überprüfbar. Erstens sieht man nach wenigen Tagen, ob die Vorhersagen (bzw. welche davon) eingetroffen sind und kann mithilfe dieses Wissens das Modell verfeinern. Zweitens kann man diesen Vorgang sehr oft wiederholen. Dies ist bei langfristigen Klimavorhersagen nicht möglich. Solche Betrachtungen sind somit um einiges schwieriger anzustellen.
+	Klima ist das Verhalten des Wetters unserer Atmosphäre über längerer Zeiträume. Hiermit sind Zeiträume in der Länge von Jahrzehnten gemeint, im Gegensatz zur kurzfristigen Wettervorhersage, die sich in der Größenordnung von Tagen oder Stunden bewegt. Klima wird im Allgemeinen über statistische Variablen (zum Beispiel Mittelwerte oder Varianzen) ausgedrückt. So beschriebene Variablen werden Klimaelemente genannt; dies sind unter anderem Temperatur, Niederschlag, Luftfeuchtigkeit, atmosphärischer Druck, Wind, Albedo, Bewölkung sowie Ein- und Ausstrahlung.\par\bigskip
+	Die Größe des System und mit ihr die Vielzahl der Einflussfaktoren und Variablen, die das Klimasystem der Erde beeinflussen und in ihm miteinander interagieren, machen eine erschöpfende Beschreiben desselben und damit eine exakte Vorhersage zukünftiger Entwicklungen unmöglich. Um dennoch verwendbare Beschreibungen des Klimas und realistische Vorhersagen seiner Veränderungen treffen zu können, müssen starke Vereinfachungen vorgenommen werden.\par\bigskip
+	Die Genauigkeit kurzfristiger Wettervorhersagen ist leicht überprüfbar. Erstens sieht man nach wenigen Tagen, ob die Vorhersagen (bzw. welche davon) eingetroffen sind und kann mithilfe dieses Wissens das Modell verfeinern. Zweitens kann man diesen Vorgang sehr oft wiederholen. Dies ist bei langfristigen Klimavorhersagen nicht möglich. Solche Betrachtungen sind somit um einiges schwieriger anzustellen. \par\bigskip
+	Modelle zur Klimabeschreibung lassen sich nach der Anzahl der betrachteten räumlichen Dimensionen klassifizieren:
+	\begin{itemize}
+		\item Nulldimensionale Klimamodelle haben keine Räumliche Dimension, es werden uniforme Bedingungen für den gesamten Planeten angenommen. Die Variablen sind Funktionen der Zeit.
+		\item In eindimensionalen Klimamodellen wird üblicherweise die geographische Breite berücksichtigt. Dadurch können Wärmeflüsse zwischen Äquatorial- und Polarregionen simuliert werden.
+		\item In höherdimensionalen Modellen können beispielsweise Atmosphärenschichten simuliert werden. Allerdings können solche Modelle normalerweise nicht mehr analytisch behandelt werden.
+	\end{itemize}
 	
-
-
+\chapter{Modelle}
+\section{Griffel und Drazin}
+	\begin{align}
+		\dfrac{dT}{dt} = (0.5 \tanh\left(\frac{T^6}{T_0^6}\right)-1) \sigma T^4 + \mu Q (0.58 + 0.2 \tanh (0.052 (T - 276.15)))
+		%((0.5 * np.tanh(var_T ** 6 / var_T0 ** 6) - 1) * var_sigma * var_T ** 4 + var_mu * var_Q * (0.58 + 0.2 * np.tanh(0.052 * (var_T - 276.15)))) / var_c
+	\end{align}
+\section{Fraedrich}
+	\begin{align}
+		p=\frac{\mu Q b}{\epsilon \sigma}
+	\end{align}
+	\begin{align}
+		q = - \frac{\mu Q (1-a)}{\epsilon \sigma}
+	\end{align}
+	Fraedrich verwendet bei und über 227.78 K eine lineare Albedo-Temperatur-Relation, dadurch ergibt sich folgende Differentialgleichung:
+	\begin{align}
+		f_{oben}(T) = \frac{\epsilon \sigma}{c} (-T^4 + p T - q)
+	\end{align}
+	Unter 227.78 K nimmt er die Albedo als konstant 0.75 an, die Gleichung vereinfacht sich hier also:
+	\begin{align}
+		f_{unten}(T) = \frac{\epsilon \sigma}{c} (-T^4 + \frac{p}{4b})
+	\end{align}
 \end{document}          

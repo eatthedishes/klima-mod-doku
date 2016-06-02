@@ -1,6 +1,11 @@
 # Download and convert all images as found in Bilder.txt:
 
-cat Bilder.txt| while read id url;do (wget -O $id.svg "$url" && inkscape -D -z --file=$id.svg --export-pdf=$id.pdf --export-latex) &; done; wait
+grep biomath.pythonanywhere.com document.tex|
+while read percentsign id url;do
+  [ "$percentsign" = "%" ] &&
+  wget -O $id.svg "$url" &&
+  inkscape -D -z --file=$id.svg --export-pdf=$id.pdf --export-latex
+done
 
 # Use them like this in Latex:
 

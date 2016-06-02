@@ -3,6 +3,10 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{subcaption}
+
 
 % Title Page
 \title{Nulldimensionale Modelle zur Beschreibung globaler Klimaänderungen}
@@ -84,14 +88,14 @@ Die von Fraedrich verwendeten Gleichungen brauchen noch zwei weitere Konstanten:
 \chapter{Fallbeispiele}
 
 % fr320 http://biomath.pythonanywhere.com/run/fraedrich/320?dl
-\begin{figure} \centering \def\svgwidth{\columnwidth} \input{fr320.pdf_tex} \label{fr320} \end{figure}
+\begin{figure}[h!] \centering \def\svgwidth{\columnwidth} \input{fr320.pdf_tex} \caption{} \label{fr320} \end{figure}
 
 In Abbildung \ref{fr320} starten wir mit einer Temperatur deutlich über dem oberen stabilen Gleichgewicht. Die Temperatur fällt schnell in Richtung Gleichgewicht und verbleibt dort. Im Modell nach Griffel und Drazin wären die Ergebnisse ähnlich.
 
 % gd288 http://biomath.pythonanywhere.com/run/griffeldrazin/288.7?dl
-\begin{figure} \centering \def\svgwidth{\columnwidth} \input{gd288.pdf_tex} \end{figure}
+\begin{figure}[h!] \centering \def\svgwidth{\columnwidth} \caption{} \label{gd288} \input{gd288.pdf_tex} \end{figure}
 
-Dies ist ein Startwert knapp unter dem instabilen Gleichgewicht. Die Temperatur verändert sich erst nur sehr langsam und pendelt sich erst spät beim niedrigeren Gleichgewicht ein. Hier unterscheidet sich das Modell von dem Modell nach Fraedrich, dort wären wir beim hohen Gleichgewicht gelandet.
+Dies (in Abbildung \ref{gd288}) ist ein Startwert knapp unter dem instabilen Gleichgewicht. Die Temperatur verändert sich erst nur sehr langsam und pendelt sich erst spät beim niedrigeren Gleichgewicht ein. Hier unterscheidet sich das Modell von dem Modell nach Fraedrich, dort wären wir beim hohen Gleichgewicht gelandet.
 
 
 
@@ -100,15 +104,15 @@ Dies ist ein Startwert knapp unter dem instabilen Gleichgewicht. Die Temperatur 
 \section{Stabilitätsanalyse}
 
 % stabfr http://biomath.pythonanywhere.com/stabanalysis/fraedrich?dl
-\begin{figure} \centering \def\svgwidth{\columnwidth} \input{stabfr.pdf_tex} \label{stabfr} \end{figure}
+\begin{figure}[h!] \centering \def\svgwidth{\columnwidth} \input{stabfr.pdf_tex} \caption{} \label{stabfr} \end{figure}
 % stabgd http://biomath.pythonanywhere.com/stabanalysis/griffeldrazin?dl
-\begin{figure} \centering \def\svgwidth{\columnwidth} \input{stabgd.pdf_tex} \label{stabgd} \end{figure}
+\begin{figure}[h!] \centering \def\svgwidth{\columnwidth} \input{stabgd.pdf_tex} \caption{} \label{stabgd} \end{figure}
 
 In diesen beiden Plots \ref{stabfr} und \ref{stabgd} ist das Stabilitätsverhalten der Modelle dargestellt. Die Kurve stellt die Gleichgewichte der Temperatur in Abhängigkeit von Vielfachen des derzeitigen Strahlungsangebotes (also die auf der Erde eintreffende Sonnenenergie) dar. Die Veränderliche ist hierbei $\mu$, wobei $\mu = 1$ dem derzeit auf der Erde vorhandenen Strahlungsangebot entspricht. $\mu = 1$ ist in den Plots durch die vertikale schwarze Linie gekennzeichnet. Die Pfeile zeigen die Trajektorien der Temperatur ausgehend von verschiedenen Anfangszuständen an. Hieraus kann man leicht stabile und instabile Gleichgewichte ablesen: Wo drei Gleichgewichte vorhanden sind, sind die beiden äußeren stabil und das innere abstoßend.\\
 Beide Modelle enthalten zwei Bifurkationspunkte. für $\mu$ etwas kleiner als $1$ verschwinden die oberen Gleichgewichte. Falls $\mu$ soweit sinkt, bewegt sich die Temperatur also in Richtung des verbleibenden niedrigen Gleichgewichtspunkts. Dieser würde nur wieder verlassen, falls $\mu$ im Anschluss stark bis zum zweiten Bifurkationspunkt stiege. Da eine so hohe Schwankung eher unwahrscheinlich ist, verbliebe nach beiden Modellen eine einmal erreichte "Schneeballerde" höchstwahrscheinlich dauerhaft in einem kalten Zustand.
 
 % comp http://biomath.pythonanywhere.com/comparison?dl
-\begin{figure} \centering \def\svgwidth{\columnwidth} \input{comp.pdf_tex} \label{comp} \end{figure}
+\begin{figure}[h!] \centering \def\svgwidth{\columnwidth} \input{comp.pdf_tex} \caption{} \label{comp} \end{figure}
 
 Hier in Abbildung \ref{comp} ist zu sehen, dass die beiden Modelle ein vom Konzept her sehr ähnliches Verhalten aufweisen. Das Modell nach Fraedrich ist weniger anfällig gegen eine Verringerung des Strahlungsangebotes und das Entkommen aus einer Schneeballerde ist etwas leichter.
 

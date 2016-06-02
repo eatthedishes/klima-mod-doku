@@ -5,6 +5,8 @@
 *.log
 *.synctex.gz
 
+*.svg
+*.pdf_tex
 *.pdf
 
 *.swp

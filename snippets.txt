@@ -1,0 +1,11 @@
+# Download and convert all images as found in Bilder.txt:
+
+cat Bilder.txt| while read id url;do (wget -O $id.svg "$url" && inkscape -D -z --file=$id.svg --export-pdf=$id.pdf --export-latex) &; done; wait
+
+# Use them like this in Latex:
+
+\begin{figure}
+    \centering
+    \def\svgwidth{\columnwidth}
+    \input{image.pdf_tex}
+\end{figure}

@@ -1,9 +1,7 @@
-http://biomath.pythonanywhere.com/run/fraedrich/288
-http://biomath.pythonanywhere.com/run/griffeldrazin/288
+fr288 http://biomath.pythonanywhere.com/run/fraedrich/288?dl
+gd288 http://biomath.pythonanywhere.com/run/griffeldrazin/288?dl
 
+stabfr http://biomath.pythonanywhere.com/stabanalysis/fraedrich?dl
+stabgd http://biomath.pythonanywhere.com/stabanalysis/griffeldrazin?dl
 
-
-http://biomath.pythonanywhere.com/stabanalysis/fraedrich
-http://biomath.pythonanywhere.com/stabanalysis/griffeldrazin
-
-http://biomath.pythonanywhere.com/comparison
+comp http://biomath.pythonanywhere.com/comparison?dl

@@ -23,16 +23,29 @@
 		\item In eindimensionalen Klimamodellen wird üblicherweise die geographische Breite berücksichtigt. Dadurch können Wärmeflüsse zwischen Äquatorial- und Polarregionen simuliert werden.
 		\item In höherdimensionalen Modellen können beispielsweise Atmosphärenschichten simuliert werden. Allerdings können solche Modelle normalerweise nicht mehr analytisch behandelt werden.
 	\end{itemize}
-	Im folgenden beschränken wir uns auf zwei nulldimensionale Klimamodelle.
+	Im Folgenden beschränken wir uns auf zwei nulldimensionale Klimamodelle, das Modell nach Griffel und Drazin und das nach Fraedrich.
+	
+	
+	
+	
+	
+	
+	
 	
 \chapter{Modelle}
-Die beiden hier behandelten Modelle verwenden viele gemeinsame Parameter.\\
+
+\section{Gemeinsame Voraussetzungen}
+
+Ein wichtiger Faktor im Klimasystem der Erde und in unseren Modellen ist die planetare Albedo. Albedo ist ein Maß für das Rückstrahlungsvermögen von Oberflächen. Sie ist eine dimensionslose Zahl und stellt das Verhältnis von reflektierter und einfallender Energie dar. Die Albedo der Erde beträgt 0,367. Veränderungen in der Eisbedeckung der Ozeane haben einen großen Einfluss auf die planetare Albedo. Somit ist diese stark temperaturabhängig. Kältere Temperaturen sorgen für mehr Meereis und somit für eine höhere Albedo. Höhere Temperaturen sorgen für eisfreie Ozeane und somit weniger Reflexion. Dies sorgt für einen selbst verstärkenden Effekt auf Temperaturveränderungen, da höhere Albedo dadurch, dass mehr Energie wieder ins All zurückgestrahlt wird, die Temperatur weiter verringert. Dieser Effekt ist in beiden Modellen zu beobachten: Beide haben einen instabilen Gleichgewichtspunkt, ab dem Temperaturen zu einem niedrigen stabilen Gleichgewicht fallen.\par\bigskip
+
+Die beiden hier behandelten Modelle sind Differentialgleichungen der Temperatur in der Zeit. Sie verwenden viele gemeinsame Parameter.\\
 
 \begin{itemize}
-	\item $T$ ist die Temperatur in Kelvin
+	\item $T$ ist die (zeitlich und räumlich gemittelte)Temperatur in Kelvin
 	\item $\epsilon$ ist die Bewölkungskonstante. Sie gibt die Abweichung vom einem schwarzen Körper mit $\epsilon=1$ an. Bei Fraedrich ist $\epsilon = 0.69$
 	\item $Q = 430 \frac{W}{m^2}$ ist die auf der Erde eintreffende Strahlung.
-	\item $\sigma = 5.67*10^{-8} \frac{W}{m^2K^4}$ ist die Stefan-Boltzmann-Konstante.
+	\item $\mu$ ist ein Faktor, mit dem $Q$ multipliziert wird, um Veränderungen im solaren Strahlungsangebot zu simulieren. Somit ist im Normalfall $\mu = 1$.
+	\item $\sigma = 5,67*10^{-8} \frac{W}{m^2K^4}$ ist die Stefan-Boltzmann-Konstante.
 	\item $h = 75m$ ist die Tiefe des Klimasystems, bis zu der Strahlunsenergieumsätze stattfinden.
 	\item $\rho = 10^3 \frac{kg}{m3}$ ist die Dichte der Atmosphäre.
 %	\item c_w
@@ -45,21 +58,23 @@ Die beiden hier behandelten Modelle verwenden viele gemeinsame Parameter.\\
 
 \section{Griffel und Drazin}
 	\begin{align}
-		\dfrac{dT}{dt} = (0.5 \tanh\left(\frac{T^6}{T_0^6}\right)-1) \sigma T^4 + \mu Q (0.58 + 0.2 \tanh (0.052 (T - 276.15)))
+		\dfrac{dT}{dt} = (0,5 \tanh\left(\frac{T^6}{T_0^6}\right)-1) \sigma T^4 + \mu Q (0,58 + 0,2 \tanh (0,052 (T - 276,15)))
 		%((0.5 * np.tanh(var_T ** 6 / var_T0 ** 6) - 1) * var_sigma * var_T ** 4 + var_mu * var_Q * (0.58 + 0.2 * np.tanh(0.052 * (var_T - 276.15)))) / var_c
 	\end{align}
 \section{Fraedrich}
+
+Die von Fraedrich verwendeten Gleichungen brauchen noch zwei weitere Konstanten: $a=2,8$ und $b=0,009 K^{-1}$.
 	\begin{align}
 		p=\frac{\mu Q b}{\epsilon \sigma}
 	\end{align}
 	\begin{align}
 		q = - \frac{\mu Q (1-a)}{\epsilon \sigma}
 	\end{align}
-	Fraedrich verwendet bei und über 227.78 K eine lineare Albedo-Temperatur-Relation, dadurch ergibt sich folgende Differentialgleichung:
+	Fraedrich verwendet bei und über 227,78 K eine lineare Albedo-Temperatur-Relation, dadurch ergibt sich folgende Differentialgleichung:
 	\begin{align}
 		f_{oben}(T) = \frac{\epsilon \sigma}{c} (-T^4 + p T - q)
 	\end{align}
-	Unter 227.78 K nimmt er die Albedo als konstant 0.75 an, die Gleichung vereinfacht sich hier also:
+	Unter 227,78 K nimmt er die Albedo als konstant 0,75 an, die Gleichung vereinfacht sich hier also:
 	\begin{align}
 		f_{unten}(T) = \frac{\epsilon \sigma}{c} (-T^4 + \frac{p}{4b})
 	\end{align}

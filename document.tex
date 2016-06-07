@@ -47,7 +47,7 @@ Die beiden hier behandelten Modelle sind Differentialgleichungen der Temperatur 
 
 \begin{itemize}
 	\item $T$ ist die (zeitlich und räumlich gemittelte)Temperatur in Kelvin
-	\item $\epsilon$ ist die Bewölkungskonstante. Sie gibt die Abweichung vom einem schwarzen Körper mit $\epsilon=1$ an. Bei Fraedrich ist $\epsilon = 0.69$
+%	\item $\epsilon$ ist die Bewölkungskonstante. Sie gibt die Abweichung vom einem schwarzen Körper mit $\epsilon=1$ an. Bei Fraedrich ist $\epsilon = 0.69$
 	\item $Q = 430 \frac{W}{m^2}$ ist die auf der Erde eintreffende Strahlung.
 	\item $\mu$ ist ein Faktor, mit dem $Q$ multipliziert wird, um Veränderungen im solaren Strahlungsangebot zu simulieren. Somit ist im Normalfall $\mu = 1$.
 	\item $\sigma = 5,67*10^{-8} \frac{W}{m^2K^4}$ ist die Stefan-Boltzmann-Konstante.
@@ -68,7 +68,7 @@ Die beiden hier behandelten Modelle sind Differentialgleichungen der Temperatur 
 	\end{align}
 \section{Fraedrich}
 
-Die von Fraedrich verwendeten Gleichungen brauchen noch zwei weitere Konstanten: $a=2,8$ und $b=0,009 K^{-1}$.
+Die von Fraedrich verwendeten Gleichungen brauchen noch weitere Konstanten: $a=2,8$ und $b=0,009 K^{-1}$. $\epsilon$ ist die Bewölkungskonstante. Sie gibt die Abweichung vom einem schwarzen Körper mit $\epsilon=1$ an. Bei Fraedrich ist $\epsilon = 0.69$. Eine stärkere Bewölkung wird durch ein geringeres $\epsilon$ simuliert, was durch weniger Abstrahlung für höhere Temperaturen sorgt. Dank dieses Effekts eignet sich $\epsilon$ auch für die Darstellung des $CO_2$-Anteils in der Atmosphäre. Ein erhöhter Anteil wird durch verringertes $\epsilon$ dargestellt.
 	\begin{align}
 		p=\frac{\mu Q b}{\epsilon \sigma}
 	\end{align}
@@ -90,12 +90,12 @@ Die von Fraedrich verwendeten Gleichungen brauchen noch zwei weitere Konstanten:
 % fr320 http://biomath.pythonanywhere.com/run/fraedrich/320?dl
 \begin{figure}[h!] \centering \def\svgwidth{\columnwidth} \input{fr320.pdf_tex} \caption{} \label{fr320} \end{figure}
 
-In Abbildung \ref{fr320} starten wir mit einer Temperatur deutlich über dem oberen stabilen Gleichgewicht. Die Temperatur fällt schnell in Richtung Gleichgewicht und verbleibt dort. Im Modell nach Griffel und Drazin wären die Ergebnisse ähnlich.
+In Abbildung \ref{fr320} (Modell nach Fraedrich) starten wir mit einer Temperatur deutlich über dem oberen stabilen Gleichgewicht. Die Temperatur fällt schnell in Richtung Gleichgewicht und verbleibt dort. Im Modell nach Griffel und Drazin wären die Ergebnisse ähnlich.
 
 % gd288 http://biomath.pythonanywhere.com/run/griffeldrazin/288.7?dl
 \begin{figure}[h!] \centering \def\svgwidth{\columnwidth} \caption{} \label{gd288} \input{gd288.pdf_tex} \end{figure}
 
-Dies (in Abbildung \ref{gd288}) ist ein Startwert knapp unter dem instabilen Gleichgewicht. Die Temperatur verändert sich erst nur sehr langsam und pendelt sich erst spät beim niedrigeren Gleichgewicht ein. Hier unterscheidet sich das Modell von dem Modell nach Fraedrich, dort wären wir beim hohen Gleichgewicht gelandet.
+Dies (in Abbildung \ref{gd288}, Modell nach Griffel und Drazin) ist ein Startwert knapp unter dem instabilen Gleichgewicht. Die Temperatur verändert sich erst nur sehr langsam und pendelt sich erst spät beim niedrigeren Gleichgewicht ein. Hier unterscheidet sich das Modell von dem Modell nach Fraedrich, dort wären wir beim hohen Gleichgewicht gelandet.
 
 
 
